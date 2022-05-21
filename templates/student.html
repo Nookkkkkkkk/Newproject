@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>นักศึกษา</title>
+{% endblock %}
+
+<style>
+    .page-links {
+        text-align: center;
+        margin: auto;
+        width: 50%
+    }
+
+
+</style>
+{% block content %}
+<header id="portfolio">
+  
+  <header id="portfolio">
+    <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class="w3-container">
+    <h1><b> รายชื่อนักศึกษา </b></h1>
+    <div class="w3-section w3-bottombar w3-padding-16">
+      <form class="form-inline my-2 my-lg-0" action="{% url 'searchstudent' %}">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form> <br>
+      <span class="w3-margin-right">Filter:</span> 
+      <button class="w3-button w3-white"><i class="fa fa-plus w3-margin-right"></i>นักศึกษา</button>
+      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-plus w3-margin-right"></i>สถานประกอบการ</button>
+      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-plus w3-margin-right"></i>แบบประเมิน</button>
+    </div>
+    </div>  
+
+</header>
+</header>
+    {% for Students in page.object_list %}
+    <div class="w3-third w3-container w3-margin-bottom">
+        <img src="/w3images/mountains.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+          <p><b>{{Students.Prefix}}  {{Students.NAME}}  {{Students.LNAME}}</b></p>
+          <p>รหัสนักศึกษา: {{Students.STUDENT_NO}}<br>ห้อง : {{Students.train_room}}<br>ปีการศึกษา: {{Students.train_year}} เทอม: {{Students.train_term}}<br>สถานที่ฝึกงาน: <br>อาจารย์ผู้นิเทศ: <br>สถานะ: ยังไม่ประเมิน</p> 
+      </div>
+      </div>
+    {% endfor %}
+ 
+
+    <div class="w3-center w3-padding-32">
+        <div class="w3-bar">
+        {% if page.has_previous %}
+          <a href="{% url 'liststudent' %}?page={{ page.previous_page_number }}" class="w3-bar-item w3-button w3-hover-black">กลับ</a>
+        {% endif %}
+        {% if page.has_next %}
+          <a href="{% url 'liststudent' %}?page={{ page.next_page_number }}" class="w3-bar-item w3-button w3-hover-black">หน้าต่อไป</a>
+        {% endif %}
+        </div>
+      </div>    
+{% endblock %}  

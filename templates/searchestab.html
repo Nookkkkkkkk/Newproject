@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>ค้นหาสถานประกอบการ</title>
+{% endblock %}
+
+{% block content %}
+
+
+    
+        
+        {% for estab in estab %}
+        <div class="w3-third w3-container w3-margin-bottom">
+            <img src="/w3images/mountains.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+              <p><b>{{estab.name}}</b></p>
+              <p>จังหวัด: {{estab.province}}<br>อำเภอ : {{estab.district}}<br>ตำบล: {{estab.canton}}<br> ที่อยู่: {{estab.address}}<br>รหัสไปรษณีย์: {{estab.postcode}}</p> 
+          </div>
+          </div>
+        {% endfor %}
+    </div>
+{% endblock %}

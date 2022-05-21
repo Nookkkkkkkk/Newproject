@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Co-op ECP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="/static/login/style.css">
+    <link rel="stylesheet" href="/static/login/button.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="container" onclick="onclick">
+        <div class="top"></div>
+        <div class="bottom"></div>
+        <div class="center">+
+            <h2>Co-op ECP</h2>
+            <form action="login" method="post">{% csrf_token %}
+                <input name="username" type="username" placeholder="username" />
+                <input name="password" type="password" placeholder="password" />
+                {% if messages %}<div class="alert alert-danger" role="alert">
+                    {% for messages in messages %}
+                    <h6> {{messages}}</h6>
+                     {% endfor %}
+                  </div>{% endif %}
+                  <center><button class="button button1">เข้าสู่ระบบ</button></center>
+            </form>
+            <h2>&nbsp;</h2>
+        </div>
+    </div>
+    <!-- partial -->
+    <script src='https://codepen.io/banik/pen/ReNNrO/3f837b2f0085b5125112fc455941ea94.js'></script>
+</body>
+
+</html>

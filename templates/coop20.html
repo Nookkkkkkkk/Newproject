@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>แบบประเมินผลรายงานสหกิจศึกษา(ส่วนที่2)</title>
+
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <!-- Font -->
+  <link href='https://fonts.googleapis.com/css?family=Kanit&subset=thai,latin' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="static/font/font.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <!-- <div class="container ">
+  <form method="post">{% csrf_token %}
+    <div class="row justify-content-start">
+    <div class="col-sm-12 col-md-9 col-md-3 col-item"><center><h2>แบบประเมินรายงานนักศึกษาสหกิจศึกษา</h2></center></div>
+    <div class="col-sm-12 col-md-9 col-md-3 col-item"><h4><u>คำชี้แจง</u></h4></div>
+    <div class="col-sm-12 col-md-9 col-md-3 col-item"><h4>1. ผู้ให้ข้อมูลในแบบประเมินนี้ต้องเป็นอาจารย์ที่ปรึกษาสหกิจฯ ของนักศึกษาสหกิจศึกษาหรือบุคคลที่ได้รับมอบหมายให้ทำหน้าที่แทน<br>
+      2. แบบประเมินผลนี้มีทั้งหมด 14 ข้อ โปรดให้ข้อมูลครบทุกข้อ เพื่อความสมบูรณ์ของการประเมินผล<br>
+      3. โปรดให้คะแนนในช่อง ในแต่ละหัวข้อการประเมิน หากไม่มีข้อมูลให้ใส่เครื่องหมาย – และโปรดให้ความคิดเห็นเพิ่มเติม (ถ้ามี)<br>
+      4. เมื่อผลเรียบร้อยแล้วอาจารย์ที่ปรึกษาสหกิจศึกษาประจำสาขาวิชา สรุปคะแนนส่งสำนักงานสหกิจศึกษาฯ <br>
+    </h4></div>
+    
+    <div class="row justify-content-center">
+    <table>
+      <div class="col-sm-12 col-md-9 col-md-3 col-item"><tr>
+        <th>หัวข้อประเมิน / Items</th>
+        <th>กรอกข้อมูลนักศึกษาและคะแนน</th>
+      </tr></div>
+    
+     
+     {{form.as_table}}</div>
+      
+     
+    </table>
+  </div>
+
+  <div class="row justify-content-end"> 
+    <div class="col-sm-12 col-md-9 col-md-3 col-item"><button type="submit" class="save btn btn-default ">Save</button> </div> 
+  </div>
+  </form>
+</div> -->
+  <div class="container">
+    <div class="jumbotron">
+      <center>
+        <h4>ผลการประเมินคณาจารย์นิเทศ</h4>
+      </center>
+      <h10><u>คำชี้แจง</u></h10><br>
+      <h10>โปรดบันทึกหมายเลข 5,4,3,2,1 หรือ – ตามความเห็นของท่านในแต่ละหัวข้อการประเมิน
+        โดยใช้เกณฑ์การประเมินค่าสำหรับระดับความคิดเห็น ดังนี้<br>
+        5 หมายถึง เห็นด้วยกับข้อความนั้นมากที่สุด หรือ เหมาะสมมากที่สุด<br>
+        4 หมายถึง เห็นด้วยกับข้อความนั้นมาก หรือ เหมาะสมมาก<br>
+        3 หมายถึง เห็นด้วยกับข้อความนั้นปลานกลาง หรือ เหมาะสมปานกลาง<br>
+        1 หมายถึง เห็นด้วยกับข้อความนั้นน้อยที่สุด หรือ เหมาะสมน้อยที่สุด<br>
+        - หมายถึง ไม่สามารถให้ระดับคะแนนได้เช่น ไม่มีความเห็น ไม่มีข้อมูล ไม่ต้องการประเมิน เป็นต้น<br>
+      </h10>
+    </div>
+
+
+    <div class="row">
+      <div class="col-sm-4">
+        <table class="table table-bordered table-dark" style="width:75%">
+
+          <tr>
+            <th>
+              <center>หัวข้อการประเมิน</center>
+            </th>
+            <th>
+              <center>กรอกข้อมูลนักศึกษาและคะแนน</center>
+            </th>
+          </tr>
+
+          {{form.as_table}}
+        </table>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <button type="button" class="btn btn-success">บันทึกข้อมูล</button>
+    </div>
+  </div>
+</body>
+
+</html>
